@@ -2,7 +2,7 @@ package tacos;
 
 import orders.TakeOrder;
 
-public class Toppings {
+public class Topping {
     private static String toppingSelection = null;
     private static String lettuce = "Lettuce";
     private static String cabbage = "Cabbage";
@@ -13,18 +13,18 @@ public class Toppings {
     private static String lime = "Lime";
     private static double toppingPrice;
 
-    public Toppings(String lettuce, String cabbage, String tomatoes, String pickledTopping, String sourCream, String avocado, String lime) {
-        Toppings.lettuce = lettuce;
-        Toppings.cabbage = cabbage;
-        Toppings.tomatoes = tomatoes;
-        Toppings.pickledTopping = pickledTopping;
-        Toppings.sourCream = sourCream;
-        Toppings.avocado = avocado;
-        Toppings.lime = lime;
-        Toppings.toppingPrice = getToppingPrice();
+    public Topping(String lettuce, String cabbage, String tomatoes, String pickledTopping, String sourCream, String avocado, String lime) {
+        Topping.lettuce = lettuce;
+        Topping.cabbage = cabbage;
+        Topping.tomatoes = tomatoes;
+        Topping.pickledTopping = pickledTopping;
+        Topping.sourCream = sourCream;
+        Topping.avocado = avocado;
+        Topping.lime = lime;
+        Topping.toppingPrice = getToppingPrice();
     }
 
-    public static void selectTopping() {
+    public static String selectTopping() {
         System.out.println("""
                 
                 Please choose a Topping.
@@ -62,6 +62,7 @@ public class Toppings {
                 selectTopping();
             }
         }
+        return null;
     }
 
     public static String getToppingSelection() {
@@ -71,15 +72,18 @@ public class Toppings {
     public static double getToppingPrice(String drinkSelection){
         if (toppingSelection.equals(lettuce) || toppingSelection.equals(cabbage))
             toppingPrice = .50;
-        if (toppingSelection.equals(tomatoes) || drinkSelection.equals(lime))
+        if (toppingSelection.equals(tomatoes))
             toppingPrice = .75;
-        if (toppingSelection.equals(horchata) || drinkSelection.equals(icedTea) && getSizeSelection().equals("Small"))
-            toppingPrice = 1.00;
-        if (toppingSelection.equals(horchata) || drinkSelection.equals(icedTea) && getSizeSelection().equals("Medium"))
+        if (toppingSelection.equals(pickledTopping))
+            toppingPrice = .25;
+        if (toppingSelection.equals(sourCream) || toppingSelection.equals(avocado) ||  toppingSelection.equals(lime))
             toppingPrice = 1.50;
-        if (toppingSelection.equals(horchata) || drinkSelection.equals(icedTea) && getSizeSelection().equals("Large"))
-            toppingPrice = 2.00;
         return toppingPrice;
+    }
+
+    @Override
+    public String toString() {
+        return  "1 X " + getToppingSelection() + " = $" + getToppingPrice(getToppingSelection());
     }
 
     public static String getLettuce() {
@@ -111,7 +115,7 @@ public class Toppings {
     }
 
     public static void setToppingPrice(double toppingPrice){
-        Toppings.toppingPrice = toppingPrice;
+        Topping.toppingPrice = toppingPrice;
     }
 
     public static double getToppingPrice(){

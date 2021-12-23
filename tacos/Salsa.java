@@ -15,7 +15,7 @@ public class Salsa {
         Salsa.christmas = christmas;
     }
 
-    public static void selectSalsa() {
+    public static String selectSalsa() {
         System.out.println("""
                 
                 Please choose a Salsa.
@@ -40,6 +40,7 @@ public class Salsa {
                 selectSalsa();
             }
         }
+        return null;
     }
 
     public static String getSalsaSelection() {

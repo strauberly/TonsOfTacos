@@ -2,21 +2,21 @@ package tacos;
 
 import orders.TakeOrder;
 
-public class Meats {
+public class Meat {
     private  static String meatSelection = null;
     private  static String groundBeef = "Ground Beef";
     private  static String  grilledChicken = "Grilled Chicken";
     private   static String greenChilePork = "Green Chile Pork";
     private  static String steak = "Steak";
 
-    public Meats(String groundBeef, String grilledChicken, String greenChilePork, String steak) {
-        Meats.groundBeef = groundBeef;
-        Meats.greenChilePork = greenChilePork;
-        Meats.grilledChicken = grilledChicken;
-        Meats.steak = steak;
+    public Meat(String groundBeef, String grilledChicken, String greenChilePork, String steak) {
+        Meat.groundBeef = groundBeef;
+        Meat.greenChilePork = greenChilePork;
+        Meat.grilledChicken = grilledChicken;
+        Meat.steak = steak;
     }
 
-    public static void selectMeat() {
+    public static String selectMeat() {
         System.out.println("""
                 Please choose a Meat.
                 
@@ -43,6 +43,7 @@ public class Meats {
                 selectMeat();
             }
         }
+        return null;
     }
 
     public static String getMeatSelection() {

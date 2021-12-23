@@ -3,20 +3,20 @@ package tacos;
 import orders.TakeOrder;
 
 //select shell here
-public class Shells {
+public class Shell {
     private static String shellSelection = null;
 
     private static String hardShell = "Hard Shell";
     private static String softShell = "Soft Shell";
     private static String friedShell = "Fried Shell";
 
-    public Shells(String hardShell, String softShell, String friedShell) {
-        Shells.hardShell = hardShell;
-        Shells.softShell = softShell;
-        Shells.friedShell = friedShell;
+    public Shell(String hardShell, String softShell, String friedShell) {
+        Shell.hardShell = hardShell;
+        Shell.softShell = softShell;
+        Shell.friedShell = friedShell;
     }
 
-    public static void selectShell() {
+    public static String selectShell() {
         System.out.println("""
                 
                 Please choose a Taco Shell.
@@ -41,6 +41,7 @@ public class Shells {
                 selectShell();
             }
         }
+        return null;
     }
 
     public static String getShellSelection() {
