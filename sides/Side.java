@@ -2,25 +2,21 @@ package sides;
 
 import orders.TakeOrder;
 
-public class Sides {
+public class Side {
     private static String sideSelection = null;
     private static double sidePrice = 0;
-    private static String corn = "Street Corn";
-    private static String pico = "Pico de Gallo";
-    private static String slaw = "Slaw de Mexico";
-    private static String papas = "Papas Fritas";
-    private static String rnb = "Rice and Beans";
+    private static final String corn = "Street Corn";
+    private static final String pico = "Pico de Gallo";
+    private static final String slaw = "Slaw de Mexico";
+    private static final String papas = "Papas Fritas";
+    private static final String rnb = "Rice and Beans";
 
 
-    public Sides(String corn, String pico, String slaw, String papas, String rnb) {
-        Sides.corn = corn;
-        Sides.pico = pico;
-        Sides.slaw = slaw;
-        Sides.papas = papas;
-        Sides.rnb = rnb;
+    public Side() {
+        Side.sideSelection = getSideSelection();
     }
 
-    public static void selectSide() {
+    public static Object selectSide() {
         System.out.println("""
                
                 Please choose a Side.
@@ -52,6 +48,7 @@ public class Sides {
                 selectSide();
             }
         }
+        return null;
     }
 
     public static String getSideSelection() {

@@ -2,20 +2,20 @@ package tacos;
 
 import orders.TakeOrder;
 
-import static tacos.Shells.getShellSelection;
-import static tacos.Meats.getMeatSelection;
-import static tacos.Toppings.getToppingSelection;
+import static tacos.Shell.getShellSelection;
+import static tacos.Meat.getMeatSelection;
+import static tacos.Topping.getToppingSelection;
 import static tacos.Salsa.getSalsaSelection;
 import static tacos.Queso.getQuesoSelection;
 
 public interface ITacoBuilder {
 
     static String selectShell() {
-        Shells.selectShell();
+        Shell.selectShell();
         return getShellSelection();
     }
     static String selectMeat(){
-        Meats.selectMeat();
+        Meat.selectMeat();
         return getMeatSelection();
     }
      static String selectSalsa(){
@@ -27,7 +27,7 @@ public interface ITacoBuilder {
         return getQuesoSelection();
      }
      static String selectTopping(){
-         Toppings.selectTopping();
+         Topping.selectTopping();
          return getToppingSelection();
      }
 

@@ -2,7 +2,7 @@ package drinks;
 
 import orders.TakeOrder;
 
-public class Drinks {
+public class Drink {
     private static String sizeSelection = null;
     private static String drinkSelection = null;
     private static double drinkPrice = 0;
@@ -15,16 +15,16 @@ public class Drinks {
     private static String cola = "Cola";
 
 
-    public Drinks(String horchata, String icedTea, String fantaO, String fantaG, String fantaP, String cola) {
-        Drinks.horchata = horchata;
-        Drinks.icedTea = icedTea;
-        Drinks.fantaO = fantaO;
-        Drinks.fantaG = fantaG;
-        Drinks.fantaP = fantaP;
-        Drinks.cola = cola;
+    public Drink(String horchata, String icedTea, String fantaO, String fantaG, String fantaP, String cola) {
+        Drink.horchata = horchata;
+        Drink.icedTea = icedTea;
+        Drink.fantaO = fantaO;
+        Drink.fantaG = fantaG;
+        Drink.fantaP = fantaP;
+        Drink.cola = cola;
     }
 
-    public static void selectDrink() {
+    public static Drink selectDrink() {
         System.out.println("""
                 
                 Please choose a Drink.
@@ -64,6 +64,7 @@ public class Drinks {
                 selectDrink();
             }
         }
+        return null;
     }
 
     public static String getDrinkSelection() {
@@ -102,6 +103,9 @@ public class Drinks {
 
 
     public static String getSizeSelection() {
+        if (sizeSelection == null){
+            return "bottle";
+        }
         return sizeSelection;
     }
 
@@ -117,6 +121,11 @@ public class Drinks {
         if (drinkSelection.equals(horchata) || drinkSelection.equals(icedTea) && getSizeSelection().equals("Large"))
             drinkPrice = 2.00;
         return drinkPrice;
+    }
+
+    @Override
+    public String toString() {
+        return  "1 X " + getDrinkSelection() + " = $" + getDrinkPrice(getDrinkSelection());
     }
 
     public static String getHorchataS() {

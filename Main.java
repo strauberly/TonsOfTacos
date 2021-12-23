@@ -1,6 +1,6 @@
 
+
 import orders.TakeOrder;
-import tacos.*;
 //future development to include open port connection to order fulfillment application and sales
 
 
@@ -72,21 +72,27 @@ import tacos.*;
 // iced tea is of type drink, s, m, l, cup
 // street corn, pico de gallo, mexican slaw, papas rice and beans are all of type sides
 // order number == rng < 300
+
+//future implementation might include:
+// items available by in stock(ie how many tacos/combos etc can be made, allow order only if in stock)
+// transmitting order to a remote location running production application
+//building a database for ease of adding, eliminating and changing menu items
+//creation of production application (receive orders, update stock, mark order ready for pick-up or delivery, notify customer?)
 public class Main {
 //    static Pound pound = new Pound();
 //    static GoldenPound gp = new GoldenPound();
     public static void main(String[] args) {
-        System.out.println("""
-                       Hola, welcome to Tons of Tacos!
-                                
-                Make your selections and place an order, por favor.
-                                
-                        Press '1' for individual items.
-                                
-                            Press '2' for combos.
-                """);
-
+//        System.out.println("""
+//                       Hola, welcome to Tons of Tacos!
 //
+//                Make your selections and place an order, por favor.
+//
+//                        Press '1' for individual items.
+//
+//                            Press '2' for combos.
+//                """);
+//
+////
 //        Shells.selectShell();
 //        System.out.println("\n" + "You have chosen " + GoldenPound.getShellSelection() + "." + "\n" + "\n");
 ////        Meats.selectMeat();
@@ -116,6 +122,10 @@ public class Main {
 //        TakeOrder.orderPound();
 //        TakeOrder.orderSide();
 //        TakeOrder.orderDrink();
-        TakeOrder.orderItem();
+//        TakeOrder.orderQuarterCombo();
+//        TakeOrder.orderQuarterCombo();
+//        TakeOrder.orderItem();
+        TakeOrder.takeOrder();
+//        TakeOrder.addOrClose();
     }
 }
