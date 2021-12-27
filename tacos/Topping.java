@@ -13,7 +13,7 @@ public class Topping {
     private static String lime = "Lime";
     private static double toppingPrice;
 
-    public Topping(String lettuce, String cabbage, String tomatoes, String pickledTopping, String sourCream, String avocado, String lime) {
+    private Topping(String lettuce, String cabbage, String tomatoes, String pickledTopping, String sourCream, String avocado, String lime) {
         Topping.lettuce = lettuce;
         Topping.cabbage = cabbage;
         Topping.tomatoes = tomatoes;
@@ -21,27 +21,27 @@ public class Topping {
         Topping.sourCream = sourCream;
         Topping.avocado = avocado;
         Topping.lime = lime;
-        Topping.toppingPrice = getToppingPrice();
+        Topping.toppingPrice = getToppingPrice(toppingSelection);
     }
 
-    public static String selectTopping() {
+    public static void selectTopping() {
         System.out.println("""
                 
                 Please choose a Topping.
                 
-                Press '1' for  Lettuce.
+                Select '1' for  Lettuce.
                 
-                Press '2' for  Cabbage.
+                Select '2' for  Cabbage.
                 
-                Press '3' for Tomatoes.
+                Select '3' for Tomatoes.
                 
-                Press '4' for  Pickled Onions and Jalepeños.
+                Select '4' for  Pickled Onions and Jalepeños.
                 
-                Press '5' for Sour Cream.
+                Select '5' for Sour Cream.
                 
-                Press '6' for Avocado.
+                Select '6' for Avocado.
                      
-                Press '7' for  Lime.
+                Select '7' for  Lime.
                 """);
 
         TakeOrder.setSelection();
@@ -62,14 +62,13 @@ public class Topping {
                 selectTopping();
             }
         }
-        return null;
     }
 
-    public static String getToppingSelection() {
+    public static String setToppingSelection() {
         return toppingSelection;
     }
 
-    public static double getToppingPrice(String drinkSelection){
+    public static double getToppingPrice(String toppingSelection){
         if (toppingSelection.equals(lettuce) || toppingSelection.equals(cabbage))
             toppingPrice = .50;
         if (toppingSelection.equals(tomatoes))
@@ -83,7 +82,7 @@ public class Topping {
 
     @Override
     public String toString() {
-        return  "1 X " + getToppingSelection() + " = $" + getToppingPrice(getToppingSelection());
+        return  "1 X " + setToppingSelection() + " = $" + getToppingPrice(setToppingSelection());
     }
 
     public static String getLettuce() {
@@ -113,13 +112,5 @@ public class Topping {
     public static String getLime() {
         return lime;
     }
-
-    public static void setToppingPrice(double toppingPrice){
-        Topping.toppingPrice = toppingPrice;
     }
-
-    public static double getToppingPrice(){
-        return toppingPrice;
-    }
-}
 

@@ -9,22 +9,22 @@ public class Salsa {
     private static String salsaVerde = "Salsa Verde";
     private static String christmas = "Christmas";
 
-    public Salsa(String salsaRoja, String salsaVerde, String christmas ) {
+    private Salsa(String salsaRoja, String salsaVerde, String christmas ) {
         Salsa.salsaRoja = salsaRoja;
         Salsa.salsaVerde = salsaVerde;
         Salsa.christmas = christmas;
     }
 
-    public static String selectSalsa() {
+    public static void selectSalsa() {
         System.out.println("""
                 
                 Please choose a Salsa.
                 
-                Press '1' for Salsa Roja.
+                Select '1' for Salsa Roja.
                 
-                Press '2' for  Salsa Verde.
+                Select '2' for  Salsa Verde.
                 
-                Press '3' for Christmas.
+                Select '3' for Christmas.
                 """);
         TakeOrder.setSelection();
         switch (TakeOrder.getSelection()) {
@@ -40,7 +40,6 @@ public class Salsa {
                 selectSalsa();
             }
         }
-        return null;
     }
 
     public static String getSalsaSelection() {

@@ -1,10 +1,8 @@
 package tacos;
-
 import orders.TakeOrder;
-
 import static tacos.Shell.getShellSelection;
 import static tacos.Meat.getMeatSelection;
-import static tacos.Topping.getToppingSelection;
+import static tacos.Topping.setToppingSelection;
 import static tacos.Salsa.getSalsaSelection;
 import static tacos.Queso.getQuesoSelection;
 
@@ -28,12 +26,11 @@ public interface ITacoBuilder {
      }
      static String selectTopping(){
          Topping.selectTopping();
-         return getToppingSelection();
+         return setToppingSelection();
      }
 
     static double setPrice(double price) {
         TakeOrder.setPrice(price);
-        return
-     price;
+        return price;
     }
 }

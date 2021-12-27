@@ -9,8 +9,8 @@ This application is designed as an ordering system for a fictional taco shop. It
 Future intended implementations might include:
 - Transmitting an order to the restaurant.
 - Ability for Restaurant to contact the customer and notify  them of an serious delays or that order is ready for pick up.
-- Ability for restaurant to monitor completeion of an order.
-- Ability for resaurant to easily maintain and alter menu.
+- Ability for restaurant to monitor completion of an order.
+- Ability for restaurant to easily maintain and alter menu.
 - Tracking sales and transactions to be used for accounting purposes.
 
 #Thank you for reading this and please feel free to contact me at zeron30@hotmail.com. Cheers! 
@@ -33,6 +33,7 @@ Future intended implementations might include:
 ** save and upload to git
 
 #Merry Christmas! Happy New Year!
+
 --------------------------------
 -application closes and restarts?
 
@@ -58,7 +59,7 @@ objects stored in a collection and selection number from scanner is usedas a key
 
 WORKING THROUGH COMBOS
 
-> but a combo itself is an array of orded items
+> but a combo itself is an array of ordered items
 
 so if pound orded price == x
 
@@ -141,8 +142,6 @@ combo development
 //            System.out.println(combo);
             Orders.forEach(System.out::println);
         }
-        
-        
 ---------------------------------------------------
 
 -- 2021 Dec 22 --
@@ -156,6 +155,7 @@ combo development
 ** extended pound from taco and cleaned up several lines of code
 
 ** began sorting through combo logic
+
 --------------------------------
 
 - restructure build taco Interface >> evaluate using something similiar but most likely utilize creating a combo class and extend it.
