@@ -15,7 +15,7 @@ public class Drink {
     private static String cola = "Cola";
 
 
-    public Drink(String horchata, String icedTea, String fantaO, String fantaG, String fantaP, String cola) {
+    private Drink(String horchata, String icedTea, String fantaO, String fantaG, String fantaP, String cola) {
         Drink.horchata = horchata;
         Drink.icedTea = icedTea;
         Drink.fantaO = fantaO;
@@ -24,22 +24,22 @@ public class Drink {
         Drink.cola = cola;
     }
 
-    public static Drink selectDrink() {
+    public static void selectDrink() {
         System.out.println("""
                 
                 Please choose a Drink.
                 
-                Press '1' for  Horchata.
+                Select '1' for  Horchata.
                 
-                Press '2' for  Iced Tea.
+                Select '2' for  Iced Tea.
                 
-                Press '3' for  Orange Fanta.
+                Select '3' for  Orange Fanta.
                 
-                Press '4' for  Grape Fanta.
+                Select '4' for  Grape Fanta.
                    
-                Press '5' for  Pineapple Fanta.
+                Select '5' for  Pineapple Fanta.
                 
-                Press '6' for  Cola.
+                Select '6' for  Cola.
                 """);
         TakeOrder.setSelection();
         switch (TakeOrder.getSelection()) {
@@ -64,7 +64,6 @@ public class Drink {
                 selectDrink();
             }
         }
-        return null;
     }
 
     public static String getDrinkSelection() {
@@ -75,11 +74,11 @@ public class Drink {
         System.out.println("""
                 Please choose a Size.
                 
-                Press '1' for  Small.
+                Select '1' for  Small.
                 
-                Press '2' for  Medium.
+                Select '2' for  Medium.
                 
-                Press '3' for  Large.
+                Select '3' for  Large.
                 """);
         TakeOrder.setSelection();
         String small = "Small";

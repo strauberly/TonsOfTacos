@@ -1,6 +1,6 @@
 package tacos;
 // Creates a taco through use of interface and allows
-// Tons of Tacos to set the parameters and allows the user to select the details
+// Tons of Tacos to set the parameters and allows the user to select the details for parameter
 public class GoldenPound implements ITacoBuilder{
     private static String shellSelection;
     private static String meatSelection;
@@ -9,7 +9,6 @@ public class GoldenPound implements ITacoBuilder{
     private static String toppingSelection;
     private static String toppingSelection2;
     private static String toppingSelection3;
-    private static double price;
 
     public GoldenPound() {
         GoldenPound.shellSelection = getShellSelection();
@@ -19,7 +18,6 @@ public class GoldenPound implements ITacoBuilder{
         GoldenPound.toppingSelection = getToppingSelection();
         GoldenPound.toppingSelection2 = getToppingSelection();
         GoldenPound.toppingSelection3 = getToppingSelection();
-//        GoldenPound.price = getPrice();
     }
 
     public static String getShellSelection() {
@@ -40,10 +38,6 @@ public class GoldenPound implements ITacoBuilder{
 
     public static String getToppingSelection() {
         return ITacoBuilder.selectTopping();
-    }
-
-    public static double getPrice() {
-        return ITacoBuilder.setPrice(5.00);
     }
 
     public String toString() {

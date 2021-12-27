@@ -16,20 +16,20 @@ public class Side {
         Side.sideSelection = getSideSelection();
     }
 
-    public static Object selectSide() {
+    public static void selectSide() {
         System.out.println("""
                
                 Please choose a Side.
                 
-                Press '1' for  Street Corn.
+                Select '1' for  Street Corn.
                 
-                Press '2' for  Pico de Gallo.
+                Select '2' for  Pico de Gallo.
                 
-                Press '3' for Slaw de Mexico.
+                Select '3' for Slaw de Mexico.
                 
-                Press '4' for  Papas Fritas.
+                Select '4' for  Papas Fritas.
                 
-                Press '5' for Rice and Beans.
+                Select '5' for Rice and Beans.
                 """);
 
         TakeOrder.setSelection();
@@ -48,7 +48,6 @@ public class Side {
                 selectSide();
             }
         }
-        return null;
     }
 
     public static String getSideSelection() {

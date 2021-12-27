@@ -6,27 +6,27 @@ public class Meat {
     private  static String meatSelection = null;
     private  static String groundBeef = "Ground Beef";
     private  static String  grilledChicken = "Grilled Chicken";
-    private   static String greenChilePork = "Green Chile Pork";
+    private  static String greenChilePork = "Green Chile Pork";
     private  static String steak = "Steak";
 
-    public Meat(String groundBeef, String grilledChicken, String greenChilePork, String steak) {
+    private Meat(String groundBeef, String grilledChicken, String greenChilePork, String steak) {
         Meat.groundBeef = groundBeef;
         Meat.greenChilePork = greenChilePork;
         Meat.grilledChicken = grilledChicken;
         Meat.steak = steak;
     }
 
-    public static String selectMeat() {
+    public static void selectMeat() {
         System.out.println("""
                 Please choose a Meat.
                 
-                Press '1' for  Ground Beef.
+                Select '1' for  Ground Beef.
                 
-                Press '2' for  Grilled Chicken.
+                Select '2' for  Grilled Chicken.
                 
-                Press '3' for  Green Chile Pork.
+                Select '3' for  Green Chile Pork.
                  
-                Press '4' for  Steak.
+                Select '4' for  Steak.
                 """);
         TakeOrder.setSelection();
         switch (TakeOrder.getSelection()) {
@@ -43,7 +43,6 @@ public class Meat {
                 selectMeat();
             }
         }
-        return null;
     }
 
     public static String getMeatSelection() {

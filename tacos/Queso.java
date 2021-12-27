@@ -12,7 +12,7 @@ public class Queso {
         Queso.fresco = fresco;
     }
 
-    public static String selectQueso() {
+    public static void selectQueso() {
         System.out.println("""
                 
                 Please choose a Queso.
@@ -34,7 +34,6 @@ public class Queso {
                 selectQueso();
             }
         }
-        return null;
     }
 
     public static String getQuesoSelection() {
