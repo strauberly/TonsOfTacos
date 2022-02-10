@@ -1,430 +1,139 @@
-This application,TonsOfTacos is intended as a demonstration of programming ability in Java for consideration by recruiters and future employers.
+# Tons of Tacos
 
-This README is a journal of this application's development.
+This application is developed by Adam Straub 2021 - current, and is intended as a demonstration of programming ability in Java for consideration by recruiters and future employers.
 
-I intend for it to be accompanied by a technical README as well as videos.
+If you have any questions about the project, have an employment opportunity, or know of any; I would love to hear from you! Please use superduper.tacos@manyme.com for correspondence. Cheers!
 
-This application is designed as an ordering system for a fictional taco shop. It is meant to have a means for a customer to build an order, get a receipt of the items chosen, their itemized costs, and a grand total.
+---
 
-Future intended implementations might include:
-- Transmitting an order to the restaurant.
-- Ability for Restaurant to contact the customer and notify  them of an serious delays or that order is ready for pick up.
-- Ability for restaurant to monitor completion of an order.
-- Ability for restaurant to easily maintain and alter menu.
+---
+
+## Table of Contents
+
+1. General Information
+2. Technologies Used
+3. Setup
+4. Package and Class Descriptions
+5. Future Implementations
+
+---
+
+---
+
+# I. General Information
+
+I was thinking of what projects I would like to build for a portfolio when I was thinking to myself "Would be kind of cool if while I wasn't working, but a buddy was, and if they were hungry, they could just send me a taco order through the command line and I could bring them lunch". That is how this project began.
+
+TonsOfTacos is designed as an ordering system (client interface) for a fictional taco shop. It is meant to have a means for a customer to build an order, get a receipt of the items chosen, their itemized costs, and a grand total.
+
+Further implementations and development will be notated in the DEV-JOURNAL.md file as well as summarized at the end of this README.
+
+---
+
+---
+
+# II. Technologies Used
+
+- java 17.0.1
+- intellij
+
+---
+
+---
+
+# III. Setup
+
+Application should function out of the box from the command line or a properly configured IDE provided the system utilizes an appropriate JRE. The program does make use of lambdas and as such java 11 or greater is required.
+
+---
+
+---
+
+# IV. Package and Class Descriptions
+
+Please note further documentation and notes may possibly be found in the code.
+
+---
+
+## Package SRC:
+
+Contains the following:
+
+| Package/Class          | Description                                                                                                                                                                                                                                                                                  |
+| ---------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Class: &nbsp; Main     | Launches our main args comprised of creating a new TakeOrder class, calling the takeOrder() method from TakeOrder class, and while our 'order is closed' flag is true (found in TakeOrder class), take an order. Essentially take an order and when the order is closed, take another order. |
+| Package: &nbsp; tacos  | Contains all classes for creating tacos.                                                                                                                                                                                                                                                     |
+| Package: &nbsp; sides  | Contains all classes for creating sides.                                                                                                                                                                                                                                                     |
+| Package: &nbsp; drinks | Contains all classes for creating drinks.                                                                                                                                                                                                                                                    |
+| Package: &nbsp; orders | Contains all classes for creating orders.                                                                                                                                                                                                                                                    |
+
+---
+
+## Package tacos:
+
+Contains the following:
+
+| Package/Class              | Description                                                                                                                                                                                                                                  |
+| -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Class: &nbsp; ANSIArt      | Contains printTaco() method. This method creates our taco artwork and greeting displayed before taking an order.                                                                                                                             |
+| Class: &nbsp; GoldenPound  | Implements our taco builder interface (ITacoBuilder). Contains our constructor for a golden taco, and methods to get the users inputs for options pertaining to creation of a 'Golden Pound' taco, and return all as a string for display.   |
+| Class: &nbsp; ITacoBuilder | This is our interface for building a custom taco such as the 'Golden Taco' based on the users selections.                                                                                                                                    |
+| Class: &nbsp; Meat         | Contains a constructor and method for selecting meat choice as well as getter methods for use in other classes such as 'Pound'.                                                                                                              |
+| Class: &nbsp; Pound        | Inherits from the Taco class to create a set type of taco through a constructor and a method that returns its traits as a string.                                                                                                            |
+| Class: &nbsp; Queso        | Contains a constructor and method for selecting queso choice as well as getter methods for use in other classes such as 'Pound'.                                                                                                             |
+| Class: &nbsp; Salsa        | Contains a constructor and method for selecting salsa choice as well as getter methods for use in other classes such as 'Pound'.                                                                                                             |
+| Class: &nbsp; Shell        | Contains a constructor and method for selecting taco shell choice as well as getter methods for use in other classes such as 'Pound'.                                                                                                        |
+| Class: &nbsp; Taco         | Contains a constructor for creating a taco object as well as getter and setter methods.                                                                                                                                                      |
+| Class: &nbsp; Topping      | Contains a constructor and method for selecting topping choice as well as getter methods for use in other classes such as 'Pound'. There is also a method for getting a topping price as toppings can also be ordered as an individual item. |
+
+---
+
+## Package sides:
+
+Contains the following:
+
+| Package/Class      | Description                                                                                             |
+| ------------------ | ------------------------------------------------------------------------------------------------------- |
+| Class: &nbsp; Side | Contains constructor and methods for making a side selection and returning the selection and its price. |
+
+---
+
+## Package orders:
+
+Contains the following:
+
+| Package/Class           | Description                                                                                                                                                                                                                                                                                                                                    |
+| ----------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Class: &nbsp; TakeOrder | Contains methods pertaining to multiple implementations of order including but not limited to: Creating a new order, adding individual items or combos to an order, adding to an existing order, closing the order and providing a receipt. This class also contains a flags for determining a new order and whether an order has been closed. |
+
+---
+
+## Package drinks:
+
+Contains the following:
+
+| Package/Class       | Description                                                                                                         |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| Class: &nbsp; Drink | Contains constructor and methods for making a drink selection, a size selection, and returning the selection price. |
+
+---
+
+---
+
+# V. Future Implementations
+
+At this point what I would like to include in the future is:
+
+- Refine current solutions to include dynamic loading of options and selection feedback to customer.
+- Include functionality of transmitting an order, instructions for pick up or delivery, and eventually include payment options.
+- Possible creation of a subscription service.
+- Develop a back of house application for storing menu items in relational database with CRUD operations for maintaining menu.
+- View open orders and mark them when complete with possible option to contact customer with notification order ready for pick up or arriving soon.
 - Tracking sales and transactions to be used for accounting purposes.
+- Inventory with provider and cost tracking.
 
-#Thank you for reading this and please feel free to contact me at zeron30@hotmail.com. Cheers! 
+---
 
--------------------------------------------------------------
--------------------------------------------------------------
+## Thank you for checking out this project and please feel free to contact me with any questions, cheers!
 
--- 2021 Dec 23 --
-
-** formated order confirmations
-
-** implemented methods for orders being totaled and displayed
-
-**implemented methods for ordering combos
-
-** aplication is set for scrolling at time being but would like console to scroll and run again
-
-** It lives! Operating mostly as intended. Will take a look again after Christmas and do some more fine tuning.
-
-** save and upload to git
-
-#Merry Christmas! Happy New Year!
-
---------------------------------
--application closes and restarts?
-
-- potential size of classes and data will most likely migrate to db
-or map
-
-- possibly move order methods to corresponding classes and reduce clutter in TakeOrder Class
-
-- possibly implement a discount for bringing your own drink container
-
-- check accesors
-
-- decide if apllication terminates after submitting ording or rolls to the next
-
-- method to start over
-
-- application closes and restarts- restructure build taco Interface >> evaluate using something similiar but most likely utilize creating a combo class and extend it.
-
-- asses means to clean up order class
-objects stored in a collection and selection number from scanner is usedas a key to call the order item?
-
-----------------------------------------------------------------
-
-WORKING THROUGH COMBOS
-
-> but a combo itself is an array of ordered items
-
-so if pound orded price == x
-
-if combo orded price = y
-
-write x to an array and write y to an array
-
-if a certain combo is ordered we want the combo name set, the individual elments orded and stored into an array in the combo
-
-the combo name is set in the order array and the price is set and added to the total array
-   
-print the combo
-print the elements in the combo
-print the price of the combo
-
-
-total prints the total of whole order
-
-method for determine price of item 
-------------------------------------------------------------------
-combo flag false
-case 1
-indvidual item ordered > item to items array
-> price to total array > print item and price
-
-done ordering
-print each item next to corresponding price
-
-print total
-
-case 2 
-combo flag true
-
-name of combo to item array, 
-
-price of combo to total array
-
-
-
->> build input validation
-
->> create method to clear order - option 0 for each selection intersection
-
->> find out how to change text color
-
-------------------------------------------------------------------------------
-
-combo development
-
-        public static void orderQuarterCombo() {
-            // instead of printing out to 2 seperate lists we just bundle the info and send to receipt
-            setPrice(4.00);
-            Pound pound = new Pound();
-             Drink.selectDrink();
-             Side.selectSide();
-            String drinkSelection = String.valueOf(Drink.getDrinkSelection());
-            String drinkSizeSelection = String.valueOf(Drink.getSizeSelection());
-            String sideSelection = String.valueOf(Side.getSideSelection());
-            String combo = "1 X Quarter Ton Combo = $" + price + "\n" +
-                    "[ " + pound + "\n" +
-                    "  1 X " + drinkSelection + " - " + drinkSizeSelection + "\n" +
-                    "  1 X " + sideSelection + " ]" + "\n";
-//            String comboDetails = pound + "\n" +
-//                    drinkSelection + "\n" + sideSelection;
-
-
-//            itemList.add(Combo);
-//            priceList.add(price);
-//            comboDetailsList.add(comboDetails);
-//            System.out.println(pound);
-//            System.out.println(drinkSelection);
-//            System.out.println(sideSelection);
-//            System.out.println(qCombo);
-//            System.out.println(comboDetails);
-//            System.out.println(priceList);
-//            System.out.println(itemList);
-//            System.out.println(comboDetailsList);
-            //sout combo details
-            Orders.add(combo);
-//            System.out.println(combo);
-            Orders.forEach(System.out::println);
-        }
----------------------------------------------------
-
--- 2021 Dec 22 --
-
-** attempted to create repo but service down at moment, continuing development
-
-** repo created
-
-** itemized prices and methods set
-
-** extended pound from taco and cleaned up several lines of code
-
-** began sorting through combo logic
-
---------------------------------
-
-- restructure build taco Interface >> evaluate using something similiar but most likely utilize creating a combo class and extend it.
--------------------------------------------------------
-or simply build a method that orders corresponding items by combo name and 
-
-case 1 combo name ==
-order the following > this could be an individual method called from combo class
-
-case 2 combo name ==
-order the folowing
-
-case 3 combo name ==
-order the following
-
-
-----------------------------------------------------------------
-
-- A combo gets at minimum a taco a side and a drink each combo
-
-> but a combo itself is an array of orded items
-
-so if pound orded price == x
-
-if combo orded price = y
-
-write x to an array and write y to an array
-
-if a certain combo is ordered we want the combo name set, the individual elments orded and stored into an array in the combo
-
-the combo name is set in the order array and the price is set and added to the total array
-   
-print the combo
-print the elements in the combo
-print the price of the combo
-
-
-total prints the total of whole order
-
-method for determine price of item 
-------------------------------------------------------------------
-combo flag false
-case 1
-indvidual item ordered > item to items array
-> price to total array > print item and price
-
-done ordering
-print each item next to corresponding price
-
-print total
-
-case 2 
-combo flag true
-
-name of combo to item array, 
-
-price of combo to total array
-
-items ordered for combo stored as a string into a combo items array
-
-sort array for each item in items array and if == combo
-
-combo count == +=
-
-go to corresponding location in combo items array
-items ordered for combo stored as a string into a combo items array
-
-set string of combo items to linked list 
-------------------------------------------------------------------------------------
-  
-  
-| combo count | combo details | item  | price |
-| 1 | combo1 | combo | combo price |
-| 2 | combo 2 | taco | taco price |
-|  |  | taco | taco price |
-|  |  | combo | combo price |
-|  |  |  |  |
-
-
-if isCombo == false
-item to item list
-price to pice list
-
-sout item plus price
-
-if isCombo == true
-combo to item list
-price to price list
-combo items stored to be printed as part of receipt later as string in combo details list
-linking multiple arrays 
-
-list priceList <double> = linked list <>();
-
-
-receipt
-sort through item list and if item == combo >> combo count  + 1  combo 
-price index == combo index
-
-sout combo:
- combo details of combo details index == combo count -1 + 
- price at combo index 
-
- 
-
-
-combo items 
-
-
-go through item list if elementfound.equals combo
-
-------------------------------------------------------------------------
-
-
->> new combos extend combo
-
-
->> move to next type of taco
-
-
->> build input validation
-
->> create method to clear order - option 0 for each selection intersection
-
->> find out how to change text color
-
-------------------------------------------------------------------------------
--------------------------------------------------------------
--- 2021 Dec 21 --
-
-** Restructured taco builder interface > found a different way to use it that is helpful
-
-** This could also be set up with sql and maps table for drinks, tacos, toppings etc. and then join tables for combo?
-
-** Began work on ordering methods
----------------------------------------------------------------------
-
->> create methods for ordering rest of items > create methods for ordering a combo which orders appropriate items
- 
- >> create method for printing receipts, creating order number and totals
-
-
->> combos > play with extending the class
-
->> build input validation
-
->> create method to clear order - option 0 for each selection intersection
-
->> find out how to change text color
-
->> set price for each item in its class and then just prices to total
-
->> receipt method
-
->> clear terminal after each block of code?
-
->> methods for adding item to menu or deleting item from menu 
-------------------------------------------------------------
-
-
--- 2021 Dec 20 --
-
-** prices built as a method, check all items in array if element == whatever add price of x to total array?
-
-** implemented selection means across classes and organised classes to corresponding packages.
------------------------------------------------------------
->> restructure build taco Interface >> evaluate using something similiar but most likely utilize creating a combo class and extending it.
-
->> move to next type of taco
-
->> combos
-
->> build input validation
-
->> create method to clear order - option 0 for each selection intersection
-
->> find out how to change text color
-
->> set price for each item in its class and then just prices to total
-
->> receipt method
-
->> clear terminal after each block of code?
-
--------------------------------------------------------------
--- 2021 Dec 19 --
-
-** base classes built
-------------------------------------------------------------------------------
-
->>application for taking orders 
-
->> finish drinks
-
->> move to next type of taco
-
->> combos
-
->> build 
-
-
-//future development to include open port connection to order fulfillment application(select location, pickup or delivery, mark an order ready, mark an order filled)  and sales (daily sales)
-
-
-//User interface:
-// what would you like to order
-// select combo or individual items
-// 1 = combo or 2 = items
-// if combo select combo
-//1 = 1/4, 2 = 3/4, 3 = taco ton
-//// select tacos sides and drinks
-//        // any additional items or combos?
-//1= y 2=n
-//        if y choose items or combo
-//        if n
-////       print out order confirmation and number
-//
-//// after each item add item or combo?
-////if y
-////1=add item 2 = add combo
-//        if n
-////       print out order confirmation and number
-//
-//if items selected
-//1= tacos 2=sides 3=drinks 4=additional toppings
-//
-//if tacos selected
-//1 = pound 2 = pound of gold
-//
-//if sides selected
-//
-//1= street corn, 2= pico, 3=papas, 4 = rice and beans
-//
-//if drinks selected
-//        1 = horchata, 2 = coke, 3 = fanta 4 = iced tea
-//
-//if fanta selected
-//1=orange 2= grape 3= pineapple
-//
-//if iced tea =
-//1=s 2=m 3=L
-
-
-
-
-
-
-//possibly use maps here
-
-
-
-// are all of these type item?
-
-
-// User selects options and creates an order with a number and confirmation printout
-// submitting an order without entering anything not allowed
-// order has to have an item, an item is individual item(s) or combo(s)
-// 1/4 ton 1/2 ton and taco ton are all types of combo
-// 1/4 ton == 2 tacos 1 side 1 drink  1/2 ton == 2 tacos, 2 sides 1 drink   Taco ton == 4 tacos, 2 sides 2 drinks
-// pound is type of taco, is shell, meat, cheese, salsa, topping one, cost is
-// pound of gold is type of taco, is shell, cheese, salsa, topping one, topping two, topping three
-// hard, fried, and soft are of type shell
-// cheddar and fresco are of type cheese
-// ground beef, steak, green chile pork and grilled chicken are of type meat
-// lettuce, cabbage, diced tomatoes, pickled jalapeĆ±o and onions, sour cream,  avocado, and lime are toppings
-// green, red, and christmas are of type salsa
-// horchata is of type drink container bottle
-// fanta is of type drink, orange, grape, pineapple, container bottle
-// coke is of type drink, container bottle
-// iced tea is of type drink, s, m, l, cup
-// street corn, pico de gallo, mexican slaw, papas rice and beans are all of type sides
-// order number == rng < 300
-
+-Adam
