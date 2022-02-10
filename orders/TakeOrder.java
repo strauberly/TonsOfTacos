@@ -27,7 +27,7 @@ public class TakeOrder {
         if (newOrder) {
             ANSIArt.printTaco();
             System.out.println( "\u001B[0m"+" ");
-            System.out.println( ("\u001B[38;5;28m" + "Hola! Welcome") + ("\u001B[0m" + " to Tons") +
+            System.out.println( ("\u001B[38;5;28m" + "Hola! Welcome") + ("\u001B[38;5;255m" + " to Tons") +
                     ("\u001B[38;5;124m"+ " of Tacos!") + "\n" + "\u001B[0m" + "\n" +
                     "Make your selections (number followed by enter) and place an order, por favor." + "\n" +
                     "\n" + "Select  '1'  for individual items. Select '2' for combos.");
@@ -102,14 +102,14 @@ public class TakeOrder {
                 
                 2. Humerous antecdote.
                 
-                thank you message.
+               A nice thank you message.
                 """);
         price = 0;
         total = 0;
         Total.clear();
         Order.clear();
         closedOrder = true;
-        Thread.sleep(6000);
+        Thread.sleep(15000);
         System.out.println("\u001b[2j");
     }
 
@@ -170,7 +170,7 @@ public class TakeOrder {
         Side.selectSide();
         String sideSelection2 = String.valueOf(Side.getSideSelection());
 
-        String combo = "1 X Half Ton Combo = $" + price + "\n" +
+        String combo = "1 X Full Ton Combo = $" + price + "\n" +
                 "[ " + taco1 + "\n" +
                 "  " +taco2 + "\n" +
                 "  " +taco3 + "\n" +
@@ -222,7 +222,7 @@ public class TakeOrder {
                 Select '2' to order a "1/2 Ton Combo".
                 (2 X  golden pounds, 1 X side, 1 X drink)
                                 
-                Select '3' to order a "Golden Ton Combo".
+                Select '3' to order a "Full Ton Combo".
                 (4 X pounds, 2 X sides, 2 X drinks)""");
 
         TakeOrder.setSelection();
@@ -269,7 +269,7 @@ public class TakeOrder {
         GoldenPound goldenPound = new GoldenPound();
         Order.add(String.valueOf(goldenPound));
         Total.add(price);
-        System.out.println(goldenPound + " = $" + price);
+        System.out.println(goldenPound);
         addOrClose();
 //        order to receipt
         // add price to total

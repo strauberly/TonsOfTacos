@@ -44,7 +44,7 @@ public class GoldenPound implements ITacoBuilder{
         return  "1 X Golden Pound = " + GoldenPound.shellSelection + ", " + GoldenPound.meatSelection + ", " +
                 GoldenPound.salsaSelection + ", " + GoldenPound.quesoSelection +
                 ", " + GoldenPound.toppingSelection + ", " +  GoldenPound.toppingSelection2 + ", "
-                + GoldenPound.toppingSelection3;
+                + GoldenPound.toppingSelection3 + " = $5.30";
     }
 
 }
